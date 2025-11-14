@@ -75,11 +75,12 @@ function App() {
     setRaw("");
 
     try {
-      const res = await fetch("http://localhost:8000/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic, tone, platform }),
-      });
+      const res = await fetch("https://ai-post-generator-9x6u.onrender.com/generate",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ topic, tone, platform }),
+        });
 
       const data = await res.json();
 
